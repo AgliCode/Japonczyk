@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://bkxvg3ueceomj"]
+
+[ext_resource type="Texture2D" uid="uid://ddp5qcddejnhc" path="res://Graphics/Board.png" id="1_80nbo"]
+
+[node name="Game" type="Node2D" unique_id=1598305123]
+
+[node name="Board" type="Sprite2D" parent="." unique_id=1835071715]
+position = Vector2(530, 362)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("1_80nbo")
+
+[node name="Red_pawn" type="Sprite2D" parent="Board" unique_id=137649101]
