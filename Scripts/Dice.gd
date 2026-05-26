@@ -1,6 +1,7 @@
 extends Node
 
-var value = 0
+var valued8 = 0
+var valued6 = 0
 @onready var label = $Label
 @onready var game = $"../GameManager"
 # Called when the node enters the scene tree for the first time.
@@ -14,6 +15,7 @@ func _process(delta: float) -> void:
 
 
 func _on_button_pressed() -> void:
-	value = randi_range(1, 6)
-	label.text = str(value)
-	game.set_dice(value)
+	valued6 = randi_range(1, 6)
+	valued8 = randi_range(1, 8)
+	label.text = "Do przodu: " + str(valued8) + "\n Do tyłu: " + str(valued6)
+	game.set_dice(valued8, valued6)

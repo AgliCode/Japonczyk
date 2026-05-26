@@ -1,10 +1,10 @@
 extends Area2D
 
+
 @export var current_field = 0
 @export var start_field = 0
 
 @onready var game = $"../../GameManager"
-@onready var my_base = bases[player_id].get_children()
 @onready var fields = get_node("/root/Game/Fields").get_children()
 @onready var bases = get_node("/root/Game/Bases").get_children()
 
@@ -13,12 +13,21 @@ extends Area2D
 @export var in_base = true
 
 func move_pawn(amount):
-	current_field = (current_field + amount) % fields.size()
+	in_base = false
+	current_field = (current_field + amount + fields.size()) % fields.size()
 	position = fields[current_field].position
 
 func return_to_base():
 	in_base = true
+	var my_base = bases[player_id].get_children()
 	position = my_base[base_index].position
+	current_field = -1
+	
+func leave_base():
+	in_base = false
+	current_field = start_field
+	position = fields[current_field].position
+	
 
 func check_capture():
 	var pawns = get_parent().get_children()
@@ -34,6 +43,7 @@ func check_capture():
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if in_base:
+		var my_base = bases[player_id].get_children()
 		position = my_base[base_index].position
 	else:
 		current_field = start_field
@@ -48,4 +58,12 @@ func _process(delta: float) -> void:
 func _input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton:
 		if event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-			move_pawn(game.dice_value)
+			if in_base and (game.dice_backward == 1 or game.dice_forward == 8):
+				leave_base()
+				return
+			if not in_base:
+				move_pawn(game.dice_forward)
+				check_capture()
+		if event.pressed and event.button_index == MOUSE_BUTTON_RIGHT:
+			move_pawn(-game.dice_backward)
+			check_capture()
