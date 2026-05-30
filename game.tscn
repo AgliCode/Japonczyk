@@ -370,6 +370,64 @@ offset_top = 301.0
 offset_right = 232.0
 offset_bottom = 355.0
 
+[node name="Homes" type="Node2D" parent="." unique_id=2126335677]
+
+[node name="Red" type="Node2D" parent="Homes" unique_id=1372973489]
+
+[node name="Slot0" type="Marker2D" parent="Homes/Red" unique_id=14441931]
+position = Vector2(706, 362)
+
+[node name="Slot1" type="Marker2D" parent="Homes/Red" unique_id=1764241766]
+position = Vector2(661, 362)
+
+[node name="Slot2" type="Marker2D" parent="Homes/Red" unique_id=1345442592]
+position = Vector2(619, 361)
+
+[node name="Slot3" type="Marker2D" parent="Homes/Red" unique_id=1567462208]
+position = Vector2(573, 361)
+
+[node name="Blue" type="Node2D" parent="Homes" unique_id=588079136]
+
+[node name="Slot0" type="Marker2D" parent="Homes/Blue" unique_id=1059302615]
+position = Vector2(531, 536)
+
+[node name="Slot1" type="Marker2D" parent="Homes/Blue" unique_id=1774188618]
+position = Vector2(531, 491)
+
+[node name="Slot2" type="Marker2D" parent="Homes/Blue" unique_id=1563344235]
+position = Vector2(530, 449)
+
+[node name="Slot3" type="Marker2D" parent="Homes/Blue" unique_id=1711363031]
+position = Vector2(531, 403)
+
+[node name="Green" type="Node2D" parent="Homes" unique_id=791648214]
+
+[node name="Slot0" type="Marker2D" parent="Homes/Green" unique_id=2055509400]
+position = Vector2(531, 188)
+
+[node name="Slot1" type="Marker2D" parent="Homes/Green" unique_id=266607671]
+position = Vector2(530, 232)
+
+[node name="Slot2" type="Marker2D" parent="Homes/Green" unique_id=363927865]
+position = Vector2(530, 278)
+
+[node name="Slot3" type="Marker2D" parent="Homes/Green" unique_id=1888943096]
+position = Vector2(530, 319)
+
+[node name="Yellow" type="Node2D" parent="Homes" unique_id=2087182942]
+
+[node name="Slot0" type="Marker2D" parent="Homes/Yellow" unique_id=1888701318]
+position = Vector2(357, 361)
+
+[node name="Slot1" type="Marker2D" parent="Homes/Yellow" unique_id=1063783673]
+position = Vector2(400, 361)
+
+[node name="Slot2" type="Marker2D" parent="Homes/Yellow" unique_id=1263184252]
+position = Vector2(446, 363)
+
+[node name="Slot3" type="Marker2D" parent="Homes/Yellow" unique_id=531892610]
+position = Vector2(487, 362)
+
 [node name="Bases" type="Node2D" parent="." unique_id=1045996425]
 
 [node name="Red" type="Node2D" parent="Bases" unique_id=1276291858]
