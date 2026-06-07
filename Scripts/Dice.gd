@@ -2,20 +2,32 @@ extends Node
 
 var valued8 = 0
 var valued6 = 0
+
 @onready var label = $Label
 @onready var game = $"../GameManager"
-# Called when the node enters the scene tree for the first time.
+
 func _ready() -> void:
 	randomize()
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-
+	
 func _on_button_pressed() -> void:
+
+	# Nie można rzucać drugi raz w tej samej turze
+	if game.can_move:
+		return
+
 	valued6 = randi_range(1, 6)
 	valued8 = randi_range(1, 8)
-	label.text = "Do przodu: " + str(valued8) + "\n Do tyłu: " + str(valued6)
+
+	label.text = "Gracz: " + str(game.current_player + 1)
+	label.text += "\nDo przodu: " + str(valued8)
+	label.text += "\nDo tyłu: " + str(valued6)
+
 	game.set_dice(valued8, valued6)
+
+func clear_label():
+	label.text = ""
+
+
+func _on_button_2_pressed() -> void:
+	game.end_turn(true, true)
+	clear_label()

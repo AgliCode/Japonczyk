@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bhyrn1oe2pkfq" path="res://Graphics/red_pawn.png" id="6_ryrav"]
 [ext_resource type="Script" uid="uid://crpffpuh5mvgg" path="res://Scripts/Dice.gd" id="7_eow3j"]
 [ext_resource type="Script" uid="uid://c15x4m5h7rrsh" path="res://Scripts/game_manager.gd" id="7_j5wjh"]
+[ext_resource type="Script" uid="uid://dfpwd7yxj8gki" path="res://money.gd" id="8_vef74"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_feb5d"]
 
@@ -354,6 +355,44 @@ texture = ExtResource("4_fc0e3")
 [node name="GameManager" type="Node" parent="." unique_id=148896889]
 script = ExtResource("7_j5wjh")
 
+[node name="Money" type="Node" parent="." unique_id=702123166]
+script = ExtResource("8_vef74")
+
+[node name="Red" type="Label" parent="Money" unique_id=1321104538]
+offset_left = 682.0
+offset_top = 488.0
+offset_right = 770.0
+offset_bottom = 511.0
+text = "1000"
+
+[node name="Blue" type="Label" parent="Money" unique_id=965276981]
+offset_left = 291.0
+offset_top = 488.0
+offset_right = 378.0
+offset_bottom = 511.0
+text = "1000"
+
+[node name="Green" type="Label" parent="Money" unique_id=1106457497]
+offset_left = 684.0
+offset_top = 98.0
+offset_right = 768.0
+offset_bottom = 121.0
+text = "1000"
+
+[node name="Yellow" type="Label" parent="Money" unique_id=1080353513]
+offset_left = 292.0
+offset_top = 98.0
+offset_right = 377.0
+offset_bottom = 121.0
+text = "1000"
+
+[node name="Button" type="Button" parent="Money" unique_id=1302504370]
+offset_left = 627.0
+offset_top = 239.0
+offset_right = 676.0
+offset_bottom = 270.0
+text = "Testy"
+
 [node name="Dice" type="Node" parent="." unique_id=131529579]
 script = ExtResource("7_eow3j")
 
@@ -369,6 +408,13 @@ offset_left = 136.0
 offset_top = 301.0
 offset_right = 232.0
 offset_bottom = 355.0
+
+[node name="Button2" type="Button" parent="Dice" unique_id=182514251]
+offset_left = 167.0
+offset_top = 199.0
+offset_right = 214.0
+offset_bottom = 230.0
+text = "Skip"
 
 [node name="Homes" type="Node2D" parent="." unique_id=2126335677]
 
@@ -486,4 +532,6 @@ position = Vector2(356, 144)
 [node name="Slot3" type="Marker2D" parent="Bases/Yellow" unique_id=229996529]
 position = Vector2(312, 144)
 
+[connection signal="pressed" from="Money/Button" to="Money" method="_on_button_pressed"]
 [connection signal="pressed" from="Dice/Button" to="Dice" method="_on_button_pressed"]
+[connection signal="pressed" from="Dice/Button2" to="Dice" method="_on_button_2_pressed"]
