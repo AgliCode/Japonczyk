@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bhyrn1oe2pkfq" path="res://Graphics/red_pawn.png" id="6_ryrav"]
 [ext_resource type="Script" uid="uid://crpffpuh5mvgg" path="res://Scripts/Dice.gd" id="7_eow3j"]
 [ext_resource type="Script" uid="uid://c15x4m5h7rrsh" path="res://Scripts/game_manager.gd" id="7_j5wjh"]
-[ext_resource type="Script" uid="uid://dfpwd7yxj8gki" path="res://money.gd" id="8_vef74"]
+[ext_resource type="Script" uid="uid://dfpwd7yxj8gki" path="res://Scripts/money.gd" id="8_vef74"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_feb5d"]
 

@@ -9,12 +9,14 @@ extends Area2D
 
 @onready var game = $"../../GameManager"
 @onready var dice = $"../../Dice"
+@onready var money = $"../../Money"
 
 @onready var fields = get_node("/root/Game/Fields").get_children()
 @onready var bases = get_node("/root/Game/Bases").get_children()
 @onready var homes = get_node("/root/Game/Homes").get_children()
 
 var pawns_in_home = 0
+var pawns_in_base = 0
 
 var steps_taken = 0
 
@@ -75,16 +77,19 @@ func finish_move():
 	
 func check_place():
 	var pawns = get_parent().get_children()
-	print(player_id)
+	pawns_in_home = 0
 	for pawn in pawns:
 		if pawn.player_id == player_id and pawn.in_home:
 			pawns_in_home +=1
-			print(pawns_in_home)
+			
+	print("haiiiiiiiiiiiiiii")
+	print(pawns_in_home)
+	print("haiiiiiiiiiiiiiii")
 	if pawns_in_home == 4 and player_id not in game.place:
-		game.place[game.i] = player_id
-		game.i+=1
-		print("test")
-		if game.i==4:
+		game.place[game.plc_index] = player_id
+		print(game.place[game.plc_index])
+		game.plc_index+=1
+		if game.plc_index==4:
 			game.end_game()
 
 func _ready():
@@ -113,14 +118,31 @@ func _input_event(viewport, event, shape_idx):
 
 	# WYJŚCIE Z BAZY
 	if in_base:
-
+		if game._LPM or game._PPM:
+			return
 		if game.dice_backward == 1 or game.dice_forward == 8:
 			leave_base()
 			finish_move()
+		else:
+			var pawns = get_parent().get_children()
+			for pawn in pawns:
+				if pawn.player_id == player_id and pawn.in_base:
+					pawns_in_base +=1
+			
+			if pawns_in_base == 4 and game.dice_backward != 1 and game.dice_forward != 8:
+				finish_move()
+			pawns_in_base=0
 		return
 
 	if in_home:
-		return
+		var pawns = get_parent().get_children()
+		pawns_in_home=0
+		for pawn in pawns:
+			if pawn.player_id == player_id and pawn.in_home:
+				pawns_in_home +=1
+		print(pawns_in_home)
+		if pawns_in_home == 4:
+			finish_move()
 
 	# KROK 1 - RUCH DO TYŁU
 	if event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
@@ -136,6 +158,8 @@ func _input_event(viewport, event, shape_idx):
 				else:
 					position = my_home[home_pos].position
 					in_home = true
+					game.end_turn(true, game._LPM)
+					money.distribute_pawn_placement_money(player_id)
 					check_place()
 			
 			else:

@@ -4,8 +4,9 @@ extends Node
 
 var dice_forward = 0
 var dice_backward = 0
-var place = [0, 1, 2, 3]
-var i = 4
+var place = [-1, -1, -1, -1]
+var plc_index = 0
+var pawn_place = 3
 
 var can_move = false
 
