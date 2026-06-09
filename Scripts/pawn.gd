@@ -82,12 +82,8 @@ func check_place():
 		if pawn.player_id == player_id and pawn.in_home:
 			pawns_in_home +=1
 			
-	print("haiiiiiiiiiiiiiii")
-	print(pawns_in_home)
-	print("haiiiiiiiiiiiiiii")
 	if pawns_in_home == 4 and player_id not in game.place:
 		game.place[game.plc_index] = player_id
-		print(game.place[game.plc_index])
 		game.plc_index+=1
 		if game.plc_index==4:
 			game.end_game()

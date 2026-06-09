@@ -12,13 +12,13 @@ func _ready() -> void:
 func _on_button_pressed() -> void:
 
 	# Nie można rzucać drugi raz w tej samej turze
-	if game.can_move:
+	if game.can_move or game.endgame:
 		return
 
 	valued6 = randi_range(1, 6)
 	valued8 = randi_range(1, 8)
 
-	label.text = "Gracz: " + str(game.current_player + 1)
+	label.text = "Gracz: " + game.player_name
 	label.text += "\nDo przodu: " + str(valued8)
 	label.text += "\nDo tyłu: " + str(valued6)
 

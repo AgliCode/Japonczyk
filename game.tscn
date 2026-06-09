@@ -355,6 +355,16 @@ texture = ExtResource("4_fc0e3")
 [node name="GameManager" type="Node" parent="." unique_id=148896889]
 script = ExtResource("7_j5wjh")
 
+[node name="Label" type="Label" parent="GameManager" unique_id=2043731429]
+modulate = Color(0, 0, 0, 1)
+offset_left = 341.0
+offset_top = 271.0
+offset_right = 720.0
+offset_bottom = 452.0
+theme_override_font_sizes/font_size = 64
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Money" type="Node" parent="." unique_id=702123166]
 script = ExtResource("8_vef74")
 
@@ -385,13 +395,6 @@ offset_top = 98.0
 offset_right = 377.0
 offset_bottom = 121.0
 text = "1000"
-
-[node name="Button" type="Button" parent="Money" unique_id=1302504370]
-offset_left = 627.0
-offset_top = 239.0
-offset_right = 676.0
-offset_bottom = 270.0
-text = "Testy"
 
 [node name="Dice" type="Node" parent="." unique_id=131529579]
 script = ExtResource("7_eow3j")
@@ -532,6 +535,5 @@ position = Vector2(750, 143)
 [node name="Slot3" type="Marker2D" parent="Bases/Green" unique_id=5032449]
 position = Vector2(706, 143)
 
-[connection signal="pressed" from="Money/Button" to="Money" method="_on_button_pressed"]
 [connection signal="pressed" from="Dice/Button" to="Dice" method="_on_button_pressed"]
 [connection signal="pressed" from="Dice/Button2" to="Dice" method="_on_button_2_pressed"]
