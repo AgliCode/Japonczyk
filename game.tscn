@@ -251,7 +251,7 @@ texture = ExtResource("2_e2o6t")
 [node name="PawnGreen1" type="Area2D" parent="Pawns" unique_id=1810552294]
 script = ExtResource("3_feb5d")
 start_field = 20
-player_id = 2
+player_id = 3
 base_index = 1
 in_base = false
 
@@ -265,7 +265,7 @@ texture = ExtResource("5_7jktm")
 [node name="PawnGreen2" type="Area2D" parent="Pawns" unique_id=2091210265]
 script = ExtResource("3_feb5d")
 start_field = 20
-player_id = 2
+player_id = 3
 base_index = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pawns/PawnGreen2" unique_id=848158360]
@@ -278,7 +278,7 @@ texture = ExtResource("5_7jktm")
 [node name="PawnGreen3" type="Area2D" parent="Pawns" unique_id=451201341]
 script = ExtResource("3_feb5d")
 start_field = 20
-player_id = 2
+player_id = 3
 base_index = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pawns/PawnGreen3" unique_id=1872638765]
@@ -291,7 +291,7 @@ texture = ExtResource("5_7jktm")
 [node name="PawnGreen4" type="Area2D" parent="Pawns" unique_id=1445958054]
 script = ExtResource("3_feb5d")
 start_field = 20
-player_id = 2
+player_id = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pawns/PawnGreen4" unique_id=333050597]
 shape = SubResource("RectangleShape2D_feb5d")
@@ -303,7 +303,7 @@ texture = ExtResource("5_7jktm")
 [node name="PawnYellow1" type="Area2D" parent="Pawns" unique_id=299249817]
 script = ExtResource("3_feb5d")
 start_field = 10
-player_id = 3
+player_id = 2
 in_base = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pawns/PawnYellow1" unique_id=2137175776]
@@ -316,7 +316,7 @@ texture = ExtResource("4_fc0e3")
 [node name="PawnYellow2" type="Area2D" parent="Pawns" unique_id=668619642]
 script = ExtResource("3_feb5d")
 start_field = 10
-player_id = 3
+player_id = 2
 base_index = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pawns/PawnYellow2" unique_id=1570544105]
@@ -329,7 +329,7 @@ texture = ExtResource("4_fc0e3")
 [node name="PawnYellow3" type="Area2D" parent="Pawns" unique_id=2133997485]
 script = ExtResource("3_feb5d")
 start_field = 10
-player_id = 3
+player_id = 2
 base_index = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pawns/PawnYellow3" unique_id=1160842323]
@@ -342,7 +342,7 @@ texture = ExtResource("4_fc0e3")
 [node name="PawnYellow4" type="Area2D" parent="Pawns" unique_id=1581914172]
 script = ExtResource("3_feb5d")
 start_field = 10
-player_id = 3
+player_id = 2
 base_index = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pawns/PawnYellow4" unique_id=1538955306]
@@ -446,20 +446,6 @@ position = Vector2(530, 449)
 [node name="Slot3" type="Marker2D" parent="Homes/Blue" unique_id=1711363031]
 position = Vector2(531, 403)
 
-[node name="Green" type="Node2D" parent="Homes" unique_id=791648214]
-
-[node name="Slot0" type="Marker2D" parent="Homes/Green" unique_id=2055509400]
-position = Vector2(531, 188)
-
-[node name="Slot1" type="Marker2D" parent="Homes/Green" unique_id=266607671]
-position = Vector2(530, 232)
-
-[node name="Slot2" type="Marker2D" parent="Homes/Green" unique_id=363927865]
-position = Vector2(530, 278)
-
-[node name="Slot3" type="Marker2D" parent="Homes/Green" unique_id=1888943096]
-position = Vector2(530, 319)
-
 [node name="Yellow" type="Node2D" parent="Homes" unique_id=2087182942]
 
 [node name="Slot0" type="Marker2D" parent="Homes/Yellow" unique_id=1888701318]
@@ -473,6 +459,20 @@ position = Vector2(446, 363)
 
 [node name="Slot3" type="Marker2D" parent="Homes/Yellow" unique_id=531892610]
 position = Vector2(487, 362)
+
+[node name="Green" type="Node2D" parent="Homes" unique_id=791648214]
+
+[node name="Slot0" type="Marker2D" parent="Homes/Green" unique_id=2055509400]
+position = Vector2(531, 188)
+
+[node name="Slot1" type="Marker2D" parent="Homes/Green" unique_id=266607671]
+position = Vector2(530, 232)
+
+[node name="Slot2" type="Marker2D" parent="Homes/Green" unique_id=363927865]
+position = Vector2(530, 278)
+
+[node name="Slot3" type="Marker2D" parent="Homes/Green" unique_id=1888943096]
+position = Vector2(530, 319)
 
 [node name="Bases" type="Node2D" parent="." unique_id=1045996425]
 
@@ -504,20 +504,6 @@ position = Vector2(354, 534)
 [node name="Slot3" type="Marker2D" parent="Bases/Blue" unique_id=770765935]
 position = Vector2(310, 534)
 
-[node name="Green" type="Node2D" parent="Bases" unique_id=1746837486]
-
-[node name="Slot0" type="Marker2D" parent="Bases/Green" unique_id=1492332675]
-position = Vector2(747, 187)
-
-[node name="Slot1" type="Marker2D" parent="Bases/Green" unique_id=2045080786]
-position = Vector2(706, 190)
-
-[node name="Slot2" type="Marker2D" parent="Bases/Green" unique_id=1012435213]
-position = Vector2(750, 143)
-
-[node name="Slot3" type="Marker2D" parent="Bases/Green" unique_id=5032449]
-position = Vector2(706, 143)
-
 [node name="Yellow" type="Node2D" parent="Bases" unique_id=1677006615]
 
 [node name="Slot0" type="Marker2D" parent="Bases/Yellow" unique_id=1487763867]
@@ -531,6 +517,20 @@ position = Vector2(356, 144)
 
 [node name="Slot3" type="Marker2D" parent="Bases/Yellow" unique_id=229996529]
 position = Vector2(312, 144)
+
+[node name="Green" type="Node2D" parent="Bases" unique_id=1746837486]
+
+[node name="Slot0" type="Marker2D" parent="Bases/Green" unique_id=1492332675]
+position = Vector2(747, 187)
+
+[node name="Slot1" type="Marker2D" parent="Bases/Green" unique_id=2045080786]
+position = Vector2(706, 190)
+
+[node name="Slot2" type="Marker2D" parent="Bases/Green" unique_id=1012435213]
+position = Vector2(750, 143)
+
+[node name="Slot3" type="Marker2D" parent="Bases/Green" unique_id=5032449]
+position = Vector2(706, 143)
 
 [connection signal="pressed" from="Money/Button" to="Money" method="_on_button_pressed"]
 [connection signal="pressed" from="Dice/Button" to="Dice" method="_on_button_pressed"]
